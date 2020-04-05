@@ -13,5 +13,5 @@ resource "aws_db_instance" "test_db" {
   username             = "admin_user"
   password             = "foobarbaz"
   iam_database_authentication_enabled = true
-  vpc_security_group_ids = ["Sgs_1", "Sgs_2"....]
+  vpc_security_group_ids = ["Sgs_1", "Sgs_2", "Sgs_3"]
 }
