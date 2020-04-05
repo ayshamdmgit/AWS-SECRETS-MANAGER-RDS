@@ -7,8 +7,8 @@ resource "aws_lambda_function" "secret_rotator_lambda" {
   filename      = "lambda_function_payload.zip"
   function_name = "lambda_function_name"
   role          = [aws_iam_policy.lambda_invoke_policy.arn,
-    aws_iam_policy.secrets_admin_policy.arn,
-    aws_iam_policy.vpc_policy.arn]
+                   aws_iam_policy.secrets_admin_policy.arn,
+                   aws_iam_policy.vpc_policy.arn]
   handler       = "lambda_handler.rds_pwd_rotator"
   filename      = data.archive_file.secret_rotator_zip.output_path
   source_code_hash =   data.archive_file.secret_rotator_zip.output_base64sha256
